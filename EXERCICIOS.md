@@ -1,47 +1,49 @@
-# Lista de Exercícios 02
-**Observação**: 
+# Lista de Exercícios 01
 
-Para executar todos os testes do pacote exercicios: 
-
-```
-$ ./gradlew test --tests exercicios.* --rerun-tasks`
-```
 
 As classes devem ser criadas nos diretórios/pacote:
  - classes: `/src/main/java/exercicios`
  - testes: `/src/test/java/exercicios`
  
-### Exercício 01 - Implementar os métodos getters e setter nas classes `Quadrado`, `Retangulo` e `Circulo` 
-1. Utilize como referência a classe `Conta` para implementar as validações e exceções
-1. Implemente os testes correspondentes
+### Exercício 01 - Figuras geométricas Retângulo e Círculo
+Utilize como referência as classes `Quadrado` e `QuadradoTeste` apresentadas nos exemplos.
+
+1. Implementar em java as classes `Retangulo` e `Circulo` com os métodos `calcularArea` e `calcularPerimetro`. Identifique os atributos necessários de cada classe. 
+1. Criar as classes de teste `RetanguloTeste`, `CirculoTeste` e implementar os testes de unidade para cada classe:
+    1. Criação dos objetos;
+    1. Presença dos atributos;
+    1. Método calcularArea;
+    1. Método calcularPerimetro;
 1. Executar os testes:
-    - `./gradlew test --tests exercicios.QuadradoTeste --rerun-tasks`
-    - `./gradlew test --tests exercicios.CirculoTeste --rerun-tasks`
+    - `./gradlew test --tests exercicios.RetanguloTeste --rerun-tasks`
     - `./gradlew test --tests exercicios.CirculoTeste --rerun-tasks`
  
-### Exercício 02 - Implementar os métodos getters e setter na classe `Correntista`
+ **Observação**: Para executar todos os testes do pacote exercicios: `./gradlew test --tests exercicios.* --rerun-tasks`
 
-1. Utilize como referência a classe `Conta` para implementar as validações e exceções
-1. Implemente os testes correspondentes
-1. Executar os testes:
+### Exercício 02 - Correntista de um banco
+
+Utilize como referência a classe `Aluno` apresentadas nos exemplos.
+
+1. Criar a class `Correntista` com os atributos `codigo`, `nome`, `email` e `telefone`;
+1. Criar a classe `CorrentistaTeste` e implementar os testes de unidade 
+    1. Criação do objeto;
+    1. Presença dos atributos;
+1. Rodar os testes:
     - `./gradlew test --tests exercicios.CorrentistaTeste --rerun-tasks`
     
-### Exercício 03 - Limite na Classe Conta
+### Exercício 03 - Funcionários
 
-Adicione na classe Conta o atributo limite conforme apresentado no diagrama
-abaixo. O limite indica o quanto pode ser sacado ou transferido além do saldo
-disponível na conta. 
+Um empresa deseja controlar os processos relacionados a funcionários (contratação, folha de pagamento, participação em projetos, etc.). 
 
-Exemplos:
-1. Dado a Conta1 (numero = 1, saldo = 500.0, limite = 1000) 
-    1. Após sacar(600.0) -> (numero = 1, saldo = -100.0, limite = 1000) 
-    1. Após sacar(900.0) -> (numero = 1, saldo = -1000.0, limite = 1000) 
-    1. Após sacar(100.0) -> (numero = 1, saldo = -1000.0, limite = 1000) -> Não permite o saque e lança uma exceção
+Após levantamento inicial de requisitos, foi modelado o seguinte diagrama de classe:
 
-1. Implemente os testes correspondentes aos métodos set e get limite
-1. Refatorar os testes para considerar o limite
-1. Executar os testes:
-    - `./gradlew test --tests exercicios.ContaTeste --rerun-tasks`
+![Image of Yaktocat](arquivos/diagrama1.png)
 
-![Image of Yaktocat](arquivos/classe-conta.png)
+Com base no diagrama de classe apresentado:
 
+1. Implementar a classe com os atributos e métodos
+2. Implementar os testes de unidade:
+    - Criação de objeto
+    - Presença de atributos
+    - Método obter dados
+    - Método promover (avaliar os valores válidos para o parâmetro porcentagemAumento)
